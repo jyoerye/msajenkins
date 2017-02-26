@@ -1,0 +1,15 @@
+h2db:
+  image: 'oscarfonts/h2:latest'
+  ports:
+    - '81:81'
+    - '1521:1521'
+  volumes:
+    - '/tmp:/opt/h2-data'
+spring:
+  image: 'toneeraj/gs-accessing-data-rest:latest'
+  environment:
+    - 'SPRING_APPLICATION_JSON={"spring":{"datasource":{"url":"jdbc:h2:tcp://172.17.0.6:1521/opt/h2-data/test"}}}'
+  links:
+    - h2db
+  ports:
+    - '8080:8080'

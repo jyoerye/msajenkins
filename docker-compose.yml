@@ -1,0 +1,24 @@
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  angular: # name of the first service
+    build: angular-client # specify the directory of the Dockerfile
+    ports:
+      - "4200:4200" # specify port forewarding
+
+  springboot: #name of the second service
+    build: docker-demo-master/src/main/docker # specify the directory of the Dockerfile
+    ports:
+      - "8081:8080" #specify ports forewarding
+      
+    links:
+      - h2db  
+      
+  h2db:
+    image: oscarfonts/h2
+    ports:
+      - "1521:1521"
+      - "81:81"
+    volumes:
+      - /tmp:/opt/h2-data
