@@ -4,11 +4,13 @@ version: '2' # specify docker-compose version
 services:
   angular: # name of the first service
     build: angular-client # specify the directory of the Dockerfile
+    container_name: docker_angular_1
     ports:
       - "4200:4200" # specify port forewarding
 
   springboot: #name of the second service
     build: docker-demo-master/build/docker  # specify the directory of the Dockerfile
+    container_name: docker_springboot_1
     ports:
       - "8081:8081" #specify ports forewarding
  
@@ -17,6 +19,7 @@ services:
       
   h2db:
     image: oscarfonts/h2
+    container_name: docker_h2db_1
     ports:
       - "1521:1521"
       - "81:81"
