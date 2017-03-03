@@ -12,7 +12,7 @@ services:
     build: docker-demo-master/build/docker  # specify the directory of the Dockerfile
     container_name: docker_springboot_1
     ports:
-      - "8081:8081" #specify ports forewarding
+      - "8081:8082" #specify ports forewarding
  
     links:
       - h2db  
