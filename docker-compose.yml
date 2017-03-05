@@ -6,7 +6,7 @@ services:
     build: angular-client # specify the directory of the Dockerfile
     container_name: docker_angular_test
     ports:
-      - "4200:4200" # specify port forewarding
+      - "4200:80" # specify port forewarding
 
   springboot: #name of the second service
     build: docker-demo-master/build/docker  # specify the directory of the Dockerfile
