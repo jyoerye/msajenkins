@@ -1,0 +1,20 @@
+version: '2'
+
+volumes:
+  jenkins_home:
+    external: true
+
+services:
+  jenkins:
+    build:
+      context: .
+      args:
+        DOCKER_GID: ${DOCKER_GID}
+        DOCKER_ENGINE: ${DOCKER_ENGINE}
+        DOCKER_COMPOSE: ${DOCKER_COMPOSE}
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    ports:
+      - "8080:8080"
