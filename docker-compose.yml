@@ -4,7 +4,7 @@ version: '2' # specify docker-compose version
 services:
   angular: # name of the first service
     build: angular-client # specify the directory of the Dockerfile
-    container_name: docker_angular_1
+    container_name: docker_angular_test
     ports:
       - "4200:4200" # specify port forewarding
 
