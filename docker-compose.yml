@@ -7,15 +7,15 @@ services:
     container_name: docker_angular_test
     ports:
       - "4200:80" # specify port forewarding
+    
 
   springboot: #name of the second service
-    build: docker-demo-master/build/docker  # specify the directory of the Dockerfile
+    image: toneeraj/gs-accessing-data-rest  # specify the directory of the Dockerfile
     container_name: docker_springboot_1
     ports:
       - "8081:8082" #specify ports forewarding
- 
-    links:
-      - h2db  
+    networks:
+      - isolated-network
       
   h2db:
     image: oscarfonts/h2
@@ -25,3 +25,9 @@ services:
       - "81:81"
     volumes:
       - /tmp:/opt/h2-data
+    networks:
+      - isolated-network
+     
+networks:
+    isolated-network:
+        driver: bridge
