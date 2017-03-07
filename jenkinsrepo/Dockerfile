@@ -47,6 +47,8 @@ RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 # Change to jenkins user
 USER jenkins
+npm config set proxy http://internetusg:8085
+npm config set https-proxy http://internetusg:8085
 
 
 # Add Jenkins plugins
