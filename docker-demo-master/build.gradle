@@ -36,7 +36,7 @@ task buildDocker(type: Docker, dependsOn: build) {
   }
 }
 
-task showSystemProperty << {
+task showSystemProperty(){
    
     assert System.properties.http.proxyHost == 'http://internetusg.mindtree.com/'
 
