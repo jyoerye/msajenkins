@@ -36,6 +36,13 @@ task buildDocker(type: Docker, dependsOn: build) {
   }
 }
 
+task showSystemProperty << {
+   
+    assert System.properties.http.proxyHost == 'http://internetusg.mindtree.com/'
+
+ 
+}
+
 repositories {
     mavenCentral()
     maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
