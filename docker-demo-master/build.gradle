@@ -16,7 +16,7 @@ apply plugin: 'spring-boot'
 apply plugin: 'docker'
 
 // This is used as the docker image prefix (org)
-group = 'toneeraj'
+group = 'chiznitt1'
 
 jar {
     baseName = 'gs-accessing-data-rest'
