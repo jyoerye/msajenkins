@@ -11,7 +11,7 @@ services:
     
 
   springboot: #name of the second service
-    image: toneeraj/gs-accessing-data-rest  # specify the directory of the Dockerfile
+    image: chiznitt1/gs-accessing-data-rest  # specify the directory of the Dockerfile
     container_name: docker_springboot_1
     ports:
       - "8081:8082" #specify ports forewarding
