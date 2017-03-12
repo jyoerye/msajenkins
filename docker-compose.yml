@@ -3,7 +3,6 @@ version: '2' # specify docker-compose version
 # Define the services/containers to be run
 services:
   angular: # name of the first service
-    build: angular-client # specify the directory of the Dockerfile
     image: chiznitt1/angular-client
     container_name: docker_angular_test
     ports:
