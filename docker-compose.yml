@@ -3,14 +3,14 @@ version: '2' # specify docker-compose version
 # Define the services/containers to be run
 services:
   angular: # name of the first service
-    build: angular-client # specify the directory of the Dockerfile
+    build: jyoerye/msajenkins_angular # specify the directory of the Dockerfile
     container_name: docker_angular_test
     ports:
       - "4200:80" # specify port forewarding
     
 
   springboot: #name of the second service
-    image: toneeraj/gs-accessing-data-rest  # specify the directory of the Dockerfile
+    image: jyoerye/msajenkins_spring  # specify the directory of the Dockerfile
     container_name: docker_springboot_1
     ports:
       - "8081:8082" #specify ports forewarding
