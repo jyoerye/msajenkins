@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router ,ActivatedRoute} from '@angular/router';
 import {DbcrudService}  from './dbcrud.service';
+import {People} from './people';
 
 
 @Component({
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
  private id:string;
   private fname:string;
  private lname:string;
+ peopleList:People[];
 
   constructor(private dbcrudservice:DbcrudService) { }
 
@@ -31,6 +33,10 @@ export class LoginComponent implements OnInit {
   onClickMe()
   {
     console.log("I have been clicked and  I will now get all details");
+    this.dbcrudservice.getAllDetails()
+      .subscribe(peopleData => this.peopleList = peopleData,
+        error => console.log(error));
+    console.log('Component: after findALl');
 
   }
 
