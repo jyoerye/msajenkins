@@ -23,4 +23,15 @@ export class DbcrudService {
 	  
   }
 
+  getAllDetails()
+  {
+	  let headers = new Headers({'Content-Type':'application/json'});
+	  
+	  return this.http.get('http://localhost:8081/people/',{headers:headers})
+	  .map(response=>response.json())
+	  .catch(error=>Observable.throw(error.statusText));
+	  
+	  
+  }
+
 }

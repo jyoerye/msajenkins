@@ -6,9 +6,7 @@
 
     <div class="form-log-in-with-email">
 
-      <div class="form-white-background">
-
-      
+      <div class="form-white-background">     
 
         <div class="form-row">
           <label> <span>id::</span> <input [(ngModel)]="id" type="text" name="id" required>
@@ -30,6 +28,11 @@
           <button type="submit" class="btn btn-success">Submit</button>
         </div>
 
+        <div class="form-row">
+          <button (click)="onClickMe()">GetAll</button>
+         
+        </div>
+
       </div>
 
       <a href="#" class="form-forgotten-password">Forgotten password
@@ -40,6 +43,13 @@
 
 
   </form>
+
+<div>
+  <li *ngFor="let person of peopleList">
+    {{ person }}
+  </li>
+</div>
+
 
 </div>
 

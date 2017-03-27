@@ -28,4 +28,10 @@ export class LoginComponent implements OnInit {
     
   }
 
+  onClickMe()
+  {
+    console.log("I have been clicked and  I will now get all details");
+
+  }
+
 }
