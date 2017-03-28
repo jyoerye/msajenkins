@@ -12,9 +12,9 @@ import {People} from './people';
 export class LoginComponent implements OnInit {
 
  private id:string;
-  private fname:string;
- private lname:string;
- peopleList:People[];
+  private fname: string;
+ private lname: string;
+ peopleList: People[];
 
   constructor(private dbcrudservice:DbcrudService) { }
 
@@ -34,10 +34,11 @@ export class LoginComponent implements OnInit {
   {
     console.log("I have been clicked and  I will now get all details");
     this.dbcrudservice.getAllDetails()
-      .subscribe(peopleData => this.peopleList = peopleData,
+      .subscribe(peopleListResp => this.handleResponse(peopleListResp),
         error => console.log(error));
-    console.log('Component: after findALl');
-
   }
-
+  handleResponse(peopleListResp: People[]) {
+	  console.log(peopleListResp);
+	  this.peopleList = peopleListResp;
+  }
 }
