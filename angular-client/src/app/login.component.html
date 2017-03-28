@@ -1,57 +1,53 @@
 <div class="main-content">
 
-  <!-- You only need this form and the form-login.css -->
+	<!-- You only need this form and the form-login.css -->
 
-  <form class="form-login" (ngSubmit)="onSubmit()" #userLogin Form="ngForm" method="post" action="#">
+	<form class="form-login" (ngSubmit)="onSubmit()" #userLogin
+		Form="ngForm" method="post" action="#">
 
-    <div class="form-log-in-with-email">
+		<div class="form-log-in-with-email">
 
-      <div class="form-white-background">     
+			<div class="form-white-background">
 
-        <div class="form-row">
-          <label> <span>id::</span> <input [(ngModel)]="id" type="text" name="id" required>
-          </label>
-        </div>
+				<div class="form-row">
+					<label> <span>id::</span> <input [(ngModel)]="id"
+						type="text" name="id" required>
+					</label>
+				</div>
 
-        <div class="form-row">
-          <label> <span>FirstName:</span> <input [(ngModel)]="fname" type="text"
-                                               name="fname" required>
-          </label>
-        </div>
-        <div class="form-row">
-          <label> <span>LastName:</span> <input [(ngModel)]="lname" type="text"
-                                               name="lname" required>
-          </label>
-        </div>
+				<div class="form-row">
+					<label> <span>FirstName:</span> <input [(ngModel)]="fname"
+						type="text" name="fname" required>
+					</label>
+				</div>
+				<div class="form-row">
+					<label> <span>LastName:</span> <input [(ngModel)]="lname"
+						type="text" name="lname" required>
+					</label>
+				</div>
 
-        <div class="form-row">
-          <button type="submit" class="btn btn-success">Submit</button>
-        </div>
-
-        <div class="form-row">
-          <button (click)="onClickMe()">GetAll</button>
-         
-        </div>
-
-      </div>
-
-      <a href="#" class="form-forgotten-password">Forgotten password
-        &middot;</a> <a href="#" class="form-create-an-account">Create an
-      account &rarr;</a>
-
-    </div>
+				<div class="form-row">
+					<button type="submit" class="btn btn-success">Submit</button>
+				</div>
 
 
-  </form>
+			</div>
 
-<div>
-  <li *ngFor="let person of peopleList">
-    {{ person }}
-  </li>
-</div>
+		</div>
 
 
-</div>
+	</form>
+	
+	
+	<div class="form-row">
+		<div (click)="onClickMe()">GetAll</div>
+	</div>
 
 
+	<div>
 
+		<div *ngFor="let person of peopleList">
+			<p>{{ person.id }} {{ person.firstName }} {{ person.lastName }}</p>
+		</div>
+
+	</div>
