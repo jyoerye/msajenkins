@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import {People} from './people';
 import { Http, Headers, RequestOptions, URLSearchParams} from'@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -23,12 +23,12 @@ export class DbcrudService {
 	  
   }
 
-  getAllDetails()
+  getAllDetails(): Observable<People[]>
   {
 	  let headers = new Headers({'Content-Type':'application/json'});
 	  
 	  return this.http.get('http://localhost:8081/people/',{headers:headers})
-	  .map(response=>response.json())
+	  .map(response=>response.json()._embedded.people)
 	  .catch(error=>Observable.throw(error.statusText));
 	  
 	  
