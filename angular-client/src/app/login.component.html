@@ -32,18 +32,12 @@
         <div class="form-row">
           <button type="button" (click)="onClickMe()">GetAll</button>
 	      </div>
-
+        
+        <div *ngFor="let person of peopleList" class="form-row">
+          <label><span>{{ person.id }} {{ person.firstName }} {{ person.lastName }}</span></label>
+		    </div>
 			</div>
 
 		</div>
 
 	</form>
-		
-
-	<div>
-
-		<div *ngFor="let person of peopleList">
-			<p>{{ person.id }} {{ person.firstName }} {{ person.lastName }}</p>
-		</div>
-
-	</div>
